@@ -18,7 +18,7 @@ async function getAIResponse(input, userId, messageID) {
     { url: 'https://ai-chat-gpt-4-lite.onrender.com/api/hercai', params: { question: input } }
   ];
 
-  let response = "⛧┈♛ʚʆɞ Corine ʚʆɞ (๑>ᴗ๑) ♛┈⛧.";
+  let response = "Poser Votre Question";
   let currentIndex = 0;
 
   for (let i = 0; i < services.length; i++) {
@@ -37,7 +37,7 @@ async function getAIResponse(input, userId, messageID) {
 module.exports = {
   config: {
     name: 'ai',
-    author: 'Arn',
+    author: 'Metoushela',
     role: 0,
     category: 'ai',
     shortDescription: 'ai to ask anything',
@@ -45,16 +45,24 @@ module.exports = {
   onStart: async function ({ api, event, args }) {
     const input = args.join(' ').trim();
     if (!input) {
-      api.sendMessage(`⛧┈♛ʚʆɞ Corine ʚʆɞ (๑>ᴗ๑) ♛┈⛧\n━━━━━━━━━━━━━━━━\nPlease provide a question or statement.\n━━━━━━━━━━━━━━━━`, event.threadID, event.messageID);
+      api.sendMessage(`Please provide a question or statement. `, event.threadID, event.messageID);
       return;
     }
 
     const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-    api.sendMessage(`⛧┈♛ʚʆɞ Corine ʚʆɞ (๑>ᴗ๑) ♛┈⛧ \n━━━━━━━━━━━━━━━━\n${response}\n━━━━━━━━━━━━━━━━`, event.threadID, messageID);
+    api.sendMessage(` ⚜�...............................\n${response}\n⚜🌹...............................`, event.threadID, messageID);
   },
   onChat: async function ({ event, message }) {
     const messageContent = event.body.trim().toLowerCase();
     if (messageContent.startsWith("ai")) {
       const input = messageContent.replace(/^ai\s*/, "").trim();
       const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
-      message.reply(`⛧┈♛ʚʆɞ Corine ʚʆɞ (๑>ᴗ๑) ♛┈⛧
+      message.reply(`
+        
+�🔱....𝗜𝘇𝘂𝗸𝘂 𝗺𝗶𝗱𝗼𝗿𝗶𝗮....🔱:
+⧠⧠⧠⧠⧠✰.✰.✰⧠⧠⧠⧠⧠\n${response}\n
+╰┈┈┈➤⊹⊱✰✫✫✰⊰⊹
+`, messageID);
+    }
+  }
+};
