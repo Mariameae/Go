@@ -37,7 +37,7 @@ async function getAIResponse(input, userId, messageID) {
 module.exports = {
   config: {
     name: 'ai',
-    author: 'Metoushela',
+    author: '𝐄𝐱𝐮𝐚𝐫𝐭𝐢',
     role: 0,
     category: 'ai',
     shortDescription: 'ai to ask anything',
@@ -50,7 +50,7 @@ module.exports = {
     }
 
     const { response, messageID } = await getAIResponse(input, event.senderID, event.messageID);
-    api.sendMessage(` ⚜�...............................\n${response}\n⚜🌹...............................`, event.threadID, messageID);
+    api.sendMessage(` ⚜...............................\n${response}\n⚜...............................`, event.threadID, messageID);
   },
   onChat: async function ({ event, message }) {
     const messageContent = event.body.trim().toLowerCase();
@@ -59,7 +59,7 @@ module.exports = {
       const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
       message.reply(`
         
-�🔱....𝗜𝘇𝘂𝗸𝘂 𝗺𝗶𝗱𝗼𝗿𝗶𝗮....🔱:
+📜....𝐄𝐔𝐀𝐑𝐓𝐈....📜:
 ⧠⧠⧠⧠⧠✰.✰.✰⧠⧠⧠⧠⧠\n${response}\n
 ╰┈┈┈➤⊹⊱✰✫✫✰⊰⊹
 `, messageID);
