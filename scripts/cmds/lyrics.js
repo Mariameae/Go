@@ -3,7 +3,7 @@ const axios = require('axios');
 module.exports = {
   config: {
     name: "lyrics",
-    aliases: ["lyrics"musique"],
+    aliases: ["lyrics"],
     version: "1.0",
     author: "otttinneeeey",
     countDown: 5,
