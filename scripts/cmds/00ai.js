@@ -59,7 +59,7 @@ module.exports = {
       const { response, messageID } = await getAIResponse(input, event.senderID, message.messageID);
       message.reply(`
         
-💝....𝐆𝐀𝐁𝐁𝐘....💝:
+🎴....𝐇𝐀𝐑𝐑𝐘....🎴:
 ⧠⧠⧠⧠⧠✰.✰.✰⧠⧠⧠⧠⧠\n${response}\n
 ╰┈┈┈➤⊹⊱✰✫✫✰⊰⊹
 `, messageID);
